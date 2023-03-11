@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Quicksand:wght@500&display=swap');
+/* html element */
+:root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --main-color: papayawhip;
+  --secondary-color: whitesmoke;
+  --font-color: #212427;
+}
+/* body styling */
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  
+  flex-direction: column;
+  
+}
+/* main wrapper */
+.wrapper{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:90vh;
+  height: 99vh;
+  
+  flex-direction: column;
+
+}
+/* header text */
+.wrapper h1{
+  font-size: 3rem;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.25;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+/* Game viewport */
+.container{
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 800px;
+  height: 650px;
+  
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+/* Character div customise */
+#character{
+  position: relative;
+  
+  bottom: 0px;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  z-index: 30;
+  
+}
+
+#bullet{
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  left: 0px;
+  display: block;
+ 
+ 
+ 
+}
+
+.active{
+  animation: fly 3s infinite ease-in-out;
+ 
+}
+
+
+@keyframes fly{
+  from{
+    left: 0px;
+    
+  }
+  to{
+    left: 700px;
+   
+  }
+}
+
+#enemy{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 685px;
+  background: #f00;
+  bottom: 100px;
+}
+#cont{
+  position: relative;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  bottom: 0px;
+}
+
+.row{
+  display:flex;
+  height: 200px;
+  width: 90%;
+  
+  flex-direction: row;
+  margin: 20px;
+  
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+
+@keyframes hoverfx{
+  0%{
+    box-shadow: 0px 0px 5px yellow;
+  }
+  10%{
+    box-shadow: 4px 4px 5px yellow;
+  }
+  20%{
+    box-shadow: 6px 6px 5px yellow;
+  }
+  30%{
+    box-shadow: 8px 8px 5px yellow;
+  }
+  40%{
+    box-shadow: 10px 10px 5px yellow;
+  }
+  50%{
+    box-shadow: 13px 13px 5px yellow;
+  }
+    60%{
+      box-shadow: 10px 10px 5px yellow;
+    }
+    70%{
+      box-shadow: 8px 8px 5px yellow;
+    }
+    80%{
+      box-shadow: 6px 6px 5px yellow;
+    }
+    90%{
+      box-shadow: 4px 4px 5px yellow;
+    }
+    100%{
+      box-shadow: 0px 0px 5px yellow;
+  }
+}
+
+
+
+.arrow {
+  position: absolute;
+  
+  transform: rotate(90deg);
+  cursor: pointer;
+  left: 150px;
+  top: 25%;
+}
+
+.arrow span {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-bottom: 5px solid #318CE7;
+  border-right: 5px solid #318CE7;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+
+.arrow2 {
+  position: absolute;
+  
+  transform: rotate(180deg);
+  cursor: pointer;
+  left: 415px;
+  top: 28%;
+}
+
+.arrow2 span {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-bottom: 5px solid #318CE7;
+  border-right: 5px solid #318CE7;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow2 span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow2 span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+.arrow3 {
+  position: absolute;
+  
+  transform: rotate(360deg);
+  cursor: pointer;
+  right: 140px;
+  top: 10%;
+}
+
+.arrow3 span {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-bottom: 5px solid #318CE7;
+  border-right: 5px solid #318CE7;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow3 span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow3 span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+h2{
+  font-family: 'Quicksand', sans-serif;
+}
